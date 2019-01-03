@@ -1,0 +1,11 @@
+
+def selsortrec(seq):
+    if len(seq)==1:
+        return(seq)
+
+    for j in range(1,len(seq)):
+        if seq[j]<seq[0]:
+            (seq[j],seq[0])=(seq[0],seq[j])
+    seq=[seq[0]]+selsortrec(seq[1:len(seq)])
+
+    return(seq)
