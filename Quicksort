@@ -1,0 +1,16 @@
+def quicksort(seq):
+    if len(seq)==1 or seq==[]:
+        return(seq)
+    
+    y=0  
+    for i in range(1,len(seq)):
+
+        if seq[i]<seq[0]:
+            (seq[y+1],seq[i])=(seq[i],seq[y+1])
+            y=y+1
+
+    (seq[0],seq[y])=(seq[y],seq[0])
+    
+    seq[0:y]=quicksort(seq[0:y])
+    seq[y+1:len(seq)]=quicksort(seq[y+1:len(seq)])
+    return(seq)
